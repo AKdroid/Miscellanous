@@ -22,6 +22,13 @@ int main(int argc, char** argv) {
     double val=horner_polynomial_expansion(coeffs,2,x_value);
     cout<<val<<endl;
     
+    //Finding max array value
+    
+    int numericarray[]={1,2,-1,4,-5,6},result[3];
+    result=max_running_sum_linear(numericarray,6,result);
+    
+    cout<<"MAX-ARRAY\n"<<result[0]<<endl<<result[1]<<endl<<result[2]<<endl;
+    
     //Get HCF of x and y
     
     int x=20,y=14;

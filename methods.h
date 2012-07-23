@@ -23,6 +23,9 @@ int HCF_Euclidean(int number1,int number2);
 
 double horner_polynomial_expansion(double * coeff,int degree,double value_x);
 
+int * max_running_sum_linear(int *array,int length,int * result);
+
+
 #ifdef	__cplusplus
 }
 #endif

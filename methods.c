@@ -58,3 +58,32 @@ double horner_polynomial_expansion(double * coeff,int degree,double value_x){
     return sum;
     
 }
+
+int * max_running_sum_linear(int *array,int length,int *result){
+    /*
+     * the maximum sub-array problem
+     * returns a value of (left index,right index,sum)
+     * 
+     * complexity O(n) -- linear
+     */
+    int j=0,sum=1<<31,start,end,last=0;
+    while(j<length){
+        int l=last+array[j];
+        
+        last=l>array[j]?l:array[j];
+        
+        sum=sum>last?sum:last;
+        
+        if(sum==last){
+            end=j;
+            if(sum==array[j])
+                start=j;
+        }
+        j++;
+    }
+    result[0]=start;
+    result[1]=end+1;
+    result[2]=sum;
+    return result;
+    
+}
